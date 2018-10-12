@@ -26,22 +26,17 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(classes = PalTrackerApplication.class, webEnvironment = RANDOM_PORT)
 public class HealthApiTest {
 
-    @Autowired
-    private TestRestTemplate restTemplate;
     @LocalServerPort
     private String port;
+    private TestRestTemplate restTemplate;
+
     @Before
     public void setUp() throws Exception {
-
-
-
         RestTemplateBuilder builder = new RestTemplateBuilder()
                 .rootUri("http://localhost:" + port)
                 .basicAuthorization("user", "password");
 
         restTemplate = new TestRestTemplate(builder);
-
-
     }
 
     @Test
