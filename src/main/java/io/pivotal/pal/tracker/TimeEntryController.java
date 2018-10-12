@@ -47,7 +47,7 @@ public class TimeEntryController {
 
     @GetMapping
     public ResponseEntity<List<TimeEntry>> list() {
-        counter.increment("TimeEntry.listed");
+        //counter.increment("TimeEntry.listed");
         return new ResponseEntity<>(timeEntriesRepo.list(), HttpStatus.OK);
     }
 
