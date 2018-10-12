@@ -28,6 +28,7 @@ public class HealthApiTest {
 
     @LocalServerPort
     private String port;
+    @Autowired
     private TestRestTemplate restTemplate;
 
     @Before
